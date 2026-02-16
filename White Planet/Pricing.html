@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="White Planet Global Pricing - Transparent security packages for homes and businesses in Nigeria. CCTV, Solar Cameras, and Smart Locks.">
+    <title>Pricing Plans | White Planet Global</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;600;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- CORE VARIABLES --- */
+        :root {
+            --primary: #0066ff;
+            --primary-dark: #004ec2;
+            --navy: #00264d;
+            --cyan: #00d2ff;
+            --white: #ffffff;
+            --bg-light: #f8fbff;
+            --text-main: #334155;
+            --text-dark: #0f172a;
+            --success: #10b981;
+            --radius: 24px;
+            --shadow-soft: 0 20px 40px rgba(0, 102, 255, 0.08);
+            --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 30px 60px rgba(0, 38, 77, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+        }
+
+        a {
+            text-decoration: none;
+            transition: 0.3s;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--navy), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            box-shadow: 0 10px 25px rgba(0, 102, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 102, 255, 0.4);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            border: 1px solid #e2e8f0;
+        }
+
+        .btn-white:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* --- HEADER (Consistent) --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 100px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* --- HERO SECTION --- */
+        .pricing-hero {
+            padding-top: 180px;
+            padding-bottom: 80px;
+            background: radial-gradient(circle at center, #ffffff, #f0f7ff);
+            text-align: center;
+            position: relative;
+        }
+
+        .pricing-hero h1 {
+            font-size: clamp(2.5rem, 4vw, 3.8rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .pricing-hero p {
+            font-size: 1.15rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* --- TOGGLE SWITCH --- */
+        .toggle-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .pricing-toggle {
+            background: white;
+            padding: 5px;
+            border-radius: 50px;
+            display: flex;
+            position: relative;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .toggle-btn {
+            padding: 12px 30px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 2;
+            transition: 0.3s;
+            color: var(--text-main);
+        }
+
+        .toggle-btn.active {
+            color: white;
+        }
+
+        .toggle-bg {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 50%;
+            height: calc(100% - 10px);
+            background: var(--navy);
+            border-radius: 40px;
+            transition: 0.3s;
+            z-index: 1;
+        }
+
+        .toggle-wrapper.business .toggle-bg {
+            left: 50%;
+            width: 48%;
+        }
+
+        /* --- PRICING CARDS --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .price-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            position: relative;
+            transition: 0.4s;
+            border: 1px solid #f1f5f9;
+            box-shadow: var(--shadow-card);
+        }
+
+        .price-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
+        }
+
+        .price-card.popular {
+            background: var(--navy);
+            color: white;
+            transform: scale(1.05);
+            z-index: 2;
+            border: none;
+            box-shadow: 0 25px 50px rgba(0, 38, 77, 0.3);
+        }
+
+        .price-card.popular:hover {
+            transform: scale(1.08);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--cyan);
+            color: var(--navy);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+        }
+
+        .plan-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .plan-price span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-left: 5px;
+            opacity: 0.7;
+        }
+
+        .plan-desc {
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+
+        .feature-list i {
+            color: var(--success);
+        }
+
+        .popular .feature-list i {
+            color: var(--cyan);
+        }
+
+        .popular .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+        }
+
+        .popular .btn:hover {
+            background: white;
+            color: var(--navy);
+        }
+
+        /* --- ADD-ONS --- */
+        .addon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .addon-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .addon-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .addon-info p {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .addon-price {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* --- COMPARISON TABLE --- */
+        .comparison-wrapper {
+            overflow-x: auto;
+            margin-top: 60px;
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-soft);
+        }
+
+        table {
+            width: 100%;
+            min-width: 700px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        th:first-child,
+        td:first-child {
+            text-align: left;
+            font-weight: 600;
+            width: 30%;
+            color: var(--navy);
+        }
+
+        th {
+            font-size: 1.1rem;
+            color: var(--navy);
+            padding-bottom: 30px;
+        }
+
+        .check {
+            color: var(--success);
+            font-size: 1.2rem;
+        }
+
+        .cross {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+        }
+
+        .highlight-cell {
+            background: #f0f9ff;
+            color: var(--primary);
+            font-weight: 700;
+            border-radius: 10px;
+        }
+
+        /* --- BENEFITS & SCENARIOS --- */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-item {
+            text-align: center;
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: #e0f2fe;
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 15px;
+        }
+
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .scenario-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #f1f5f9;
+        }
+
+        .scenario-badge {
+            background: var(--navy);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        /* --- FINANCING BANNER --- */
+        .finance-banner {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-radius: var(--radius);
+            padding: 50px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .finance-content h3 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        .finance-check {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .fc-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .fc-item i {
+            color: var(--success);
+        }
+
+        /* --- FAQ --- */
+        .faq-item {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.3s;
+            padding: 0 20px;
+            color: #64748b;
+        }
+
+        .faq-item.active .faq-answer {
+            padding-bottom: 20px;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary);
+        }
+
+        /* --- CORPORATE CTA --- */
+        .corporate-cta {
+            background: linear-gradient(rgba(0, 38, 77, 0.9), rgba(0, 38, 77, 0.95)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--navy);
+            color: #cbd5e1;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .price-card.popular {
+                transform: scale(1);
+            }
+
+            .scenario-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pricing-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .finance-banner {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .finance-check {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .scenario-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="white planet global.html" class="nav-logo">
+                    <img src="logo.png" alt="White Planet Global">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="white planet global.html">Home</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Pricing.html" class="active">Pricing</a></li>
+                    <li><a href="contact us.html">Contact</a></li>
+                </ul>
+                <a href="contact us.html" class="btn btn-primary">Get Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="pricing-hero">
+        <div class="container" data-aos="fade-up">
+            <h1 class="text-gradient">Transparent Security Pricing. <br> No Hidden Charges.</h1>
+            <p>Pick a package that fits your apartment, home, office, or estate. Every plan includes professional
+                installation and support.</p>
+            <div style="display: flex; justify-content: center; gap: 15px;">
+                <a href="contact us.html" class="btn btn-primary">Book Free Site Survey</a>
+                <a href="https://wa.me/2348149424390" class="btn btn-white"><i class="fab fa-whatsapp"></i> WhatsApp
+                    Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="padding-bottom: 100px;">
+
+        <div class="toggle-wrapper" data-aos="fade-up">
+            <div class="pricing-toggle" onclick="togglePricing()">
+                <div class="toggle-bg"></div>
+                <div class="toggle-btn active" id="btn-home">Home / Residential</div>
+                <div class="toggle-btn" id="btn-business">Business / Estate</div>
+            </div>
+        </div>
+
+        <div class="pricing-grid" id="pricing-container">
+            <div class="price-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="plan-name">Starter</div>
+                <div class="plan-price">₦95k <span>/ installed</span></div>
+                <p class="plan-desc">Essential security for apartments and small shops.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-video"></i> 1 HD Indoor Camera</li>
+                    <li><i class="fas fa-mobile-alt"></i> Mobile App Access</li>
+                    <li><i class="fas fa-walking"></i> Motion Alerts</li>
+                    <li><i class="fas fa-shield-alt"></i> 6 Months Warranty</li>
+                </ul>
+                <a href="contact us.html" class="btn btn-white"
+                    style="width: 100%; justify-content: center; margin-top: 20px;">Select Plan</a>
+            </div>
+
+            <div class="price-card popular" data-aos="fade-up" data-aos-delay="100">
+                <div class="popular-badge">BEST SELLER</div>
+                <div class="plan-name">Family Pro</div>
+                <div class="plan-price">₦250k <span>/ installed</span></div>
+                <p class="plan-desc">Perfect coverage for duplexes and family homes.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> 3 Solar-Powered Cameras</li>
+                    <li><i class="fas fa-check-circle"></i> Full Color Night Vision</li>
+                    <li><i class="fas fa-check-circle"></i> 2-Way Audio Intercom</li>
+                    <li><i class="fas fa-check-circle"></i> 1 Year Warranty</li>
+                </ul>
+                <a href="contact us.html" class="btn btn-primary"
+                    style="width: 100%; justify-content: center; margin-top: 20px;">Select Plan</a>
+            </div>
+
+            <div class="price-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="plan-name">Estate Elite</div>
+                <div class="plan-price">₦550k <span>/ installed</span></div>
+                <p class="plan-desc">Comprehensive protection for large properties.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-video"></i> 8 Ultra-HD Cameras</li>
+                    <li><i class="fas fa-fingerprint"></i> Smart Door Lock Included</li>
+                    <li><i class="fas fa-tv"></i> Dedicated Monitoring Screen</li>
+                    <li><i class="fas fa-hdd"></i> 3TB Storage Space</li>
+                </ul>
+                <a href="contact us.html" class="btn btn-white"
+                    style="width: 100%; justify-content: center; margin-top: 20px;">Select Plan</a>
+            </div>
+        </div>
+
+        <h3 style="margin-bottom: 20px;">Optional Add-ons</h3>
+        <div class="addon-grid" data-aos="fade-up">
+            <div class="addon-card">
+                <div class="addon-info">
+                    <h4>Extra Camera</h4>
+                    <p>Add 1 more unit to any plan</p>
+                </div>
+                <div class="addon-price">+₦35,000</div>
+            </div>
+            <div class="addon-card">
+                <div class="addon-info">
+                    <h4>Smart Lock Upgrade</h4>
+                    <p>Fingerprint & App unlock</p>
+                </div>
+                <div class="addon-price">+₦60,000</div>
+            </div>
+            <div class="addon-card">
+                <div class="addon-info">
+                    <h4>Solar Panel Extension</h4>
+                    <p>For areas with zero light</p>
+                </div>
+                <div class="addon-price">+₦25,000</div>
+            </div>
+            <div class="addon-card">
+                <div class="addon-info">
+                    <h4>Electric Fence Module</h4>
+                    <p>Perimeter shock system</p>
+                </div>
+                <div class="addon-price">+₦120,000</div>
+            </div>
+        </div>
+
+        <div class="comparison-wrapper" data-aos="fade-up">
+            <h3 style="text-align: center; margin-bottom: 30px;">Compare Features</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Starter</th>
+                        <th style="color: var(--primary);">Family Pro</th>
+                        <th>Estate Elite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cameras</td>
+                        <td>1 HD</td>
+                        <td class="highlight-cell">3 Solar</td>
+                        <td>8 Ultra-HD</td>
+                    </tr>
+                    <tr>
+                        <td>Power Source</td>
+                        <td>Wall Socket</td>
+                        <td class="highlight-cell">Solar + Battery</td>
+                        <td>Hybrid (Wired)</td>
+                    </tr>
+                    <tr>
+                        <td>Night Vision</td>
+                        <td>B&W</td>
+                        <td class="highlight-cell">Full Color</td>
+                        <td>Color Long Range</td>
+                    </tr>
+                    <tr>
+                        <td>Smart Human Detect</td>
+                        <td><i class="fas fa-check check"></i></td>
+                        <td class="highlight-cell"><i class="fas fa-check check"></i></td>
+                        <td><i class="fas fa-check check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Storage</td>
+                        <td>SD Card (Sold Sep)</td>
+                        <td class="highlight-cell">Local Storage</td>
+                        <td>3TB HDD</td>
+                    </tr>
+                    <tr>
+                        <td>Monitor Screen</td>
+                        <td><i class="fas fa-times cross"></i></td>
+                        <td class="highlight-cell"><i class="fas fa-times cross"></i></td>
+                        <td><i class="fas fa-check check"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <section class="section-padding" style="background: white;">
+        <div class="container">
+            <div class="text-center">
+                <h2>What You Get With Every Package</h2>
+                <p style="color: #64748b;">Standard White Planet benefits.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="benefit-icon"><i class="fas fa-tools"></i></div>
+                    <h5>Professional Installation</h5>
+                    <p style="font-size: 0.85rem; color: #64748b;">Done by certified engineers.</p>
+                </div>
+                <div class="benefit-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="benefit-icon"><i class="fas fa-ruler-combined"></i></div>
+                    <h5>Free Site Survey</h5>
+                    <p style="font-size: 0.85rem; color: #64748b;">Available in Lagos & Abuja.</p>
+                </div>
+                <div class="benefit-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h5>Anti-Theft Setup</h5>
+                    <p style="font-size: 0.85rem; color: #64748b;">Hardware secured against removal.</p>
+                </div>
+                <div class="benefit-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="benefit-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h5>Mobile Training</h5>
+                    <p style="font-size: 0.85rem; color: #64748b;">We teach you how to use the app.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <h3 class="text-center" style="margin-bottom: 30px;">Not Sure What To Pick?</h3>
+            <div class="scenario-grid">
+                <div class="scenario-card" data-aos="fade-up">
+                    <i class="fas fa-home" style="font-size: 2rem; color: #94a3b8; margin-bottom: 10px;"></i>
+                    <h4>1-Bed Apartment</h4>
+                    <span class="scenario-badge">Starter Plan</span>
+                </div>
+                <div class="scenario-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-house-user" style="font-size: 2rem; color: #94a3b8; margin-bottom: 10px;"></i>
+                    <h4>4-Bed Duplex</h4>
+                    <span class="scenario-badge" style="background: var(--primary);">Family Pro</span>
+                </div>
+                <div class="scenario-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-warehouse" style="font-size: 2rem; color: #94a3b8; margin-bottom: 10px;"></i>
+                    <h4>Warehouse</h4>
+                    <span class="scenario-badge">Estate Elite</span>
+                </div>
+                <div class="scenario-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-torii-gate" style="font-size: 2rem; color: #94a3b8; margin-bottom: 10px;"></i>
+                    <h4>Estate Gate</h4>
+                    <span class="scenario-badge">Corporate Custom</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" style="margin-bottom: 100px;" data-aos="zoom-in">
+        <div class="finance-banner">
+            <div class="finance-content">
+                <h3>Pay Small Small</h3>
+                <p>Don't break the bank. Pay 70% upfront and spread the balance over 2 months.</p>
+                <div class="finance-check">
+                    <div class="fc-item"><i class="fas fa-check-circle"></i> No Interest</div>
+                    <div class="fc-item"><i class="fas fa-check-circle"></i> Immediate Installation</div>
+                    <div class="fc-item"><i class="fas fa-check-circle"></i> Valid for Elite Plans</div>
+                </div>
+            </div>
+            <a href="contact us.html" class="btn btn-white"
+                style="background: transparent; color: white; border-color: white;">Apply Now</a>
+        </div>
+    </div>
+
+    <section class="container" style="max-width: 800px; margin-bottom: 100px;">
+        <h2 class="text-center" style="margin-bottom: 40px;">Pricing FAQ</h2>
+        <div class="faq-item">
+            <div class="faq-question">Is installation included in the price? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Yes! All prices listed above include professional installation and configuration
+                within Lagos and Abuja. Logistics fees apply for other states.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Can I monitor from my phone? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Absolutely. Every single package we offer comes with a mobile app setup so you can
+                view live feeds from anywhere in the world.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Do you offer discounts for bulk installations? <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">Yes, for estates or office complexes requiring 10+ cameras, we offer corporate
+                discounts. Please contact us for a custom quote.</div>
+        </div>
+    </section>
+
+    <section class="corporate-cta">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Building an Estate or Office Complex?</h2>
+            <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px;">Standard packages might not fit large
+                infrastructures. Request a custom quote today.</p>
+            <div style="display: flex; justify-content: center; gap: 20px;">
+                <a href="contact us.html" class="btn btn-primary">Request Corporate Quote</a>
+                <a href="tel:+2348149424390" class="btn btn-white"
+                    style="background: transparent; border: 1px solid white; color: white;">Speak to Engineer</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px;">WHITE PLANET GLOBAL</h3>
+                    <p style="font-size: 0.9rem; line-height: 1.8; opacity: 0.8;">
+                        Securing Nigerian homes with innovation. Contact us today for a smarter, safer future.
+                    </p>
+                </div>
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 1.1rem;">Quick Links</h3>
+                    <ul style="opacity: 0.8; line-height: 2;">
+                        <li><a href="white planet global.html">Home</a></li>
+                        <li><a href="Services.html">Services</a></li>
+                        <li><a href="Pricing.html">Pricing</a></li>
+                        <li><a href="contact us.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 1.1rem;">Contact</h3>
+                    <p style="margin-bottom: 10px; opacity: 0.8;"><i class="fas fa-phone-alt"></i> +234 814 942 4390</p>
+                    <p style="margin-bottom: 20px; opacity: 0.8;"><i class="fas fa-envelope"></i> info@whiteplanet.com
+                    </p>
+                </div>
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px; font-size: 1.1rem;">Socials</h3>
+                    <div style="font-size: 1.5rem;">
+                        <a href="#" style="margin-right: 15px;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="margin-right: 15px;"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 0.85rem; opacity: 0.6;">
+                &copy; 2025 White Planet Global. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/2348149424390"
+        style="position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 999; animation: bounce 2s infinite;">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <style>
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, offset: 100, once: true });
+
+        // Pricing Data
+        const residentialPlans = `
+            <div class="price-card" data-aos="fade-up">
+                <div class="plan-name">Starter</div>
+                <div class="plan-price">₦95k <span>/ installed</span></div>
+                <p class="plan-desc">Essential security for apartments and small shops.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-video"></i> 1 HD Indoor Camera</li>
+                    <li><i class="fas fa-mobile-alt"></i> Mobile App Access</li>
+                    <li><i class="fas fa-walking"></i> Motion Alerts</li>
+                    <li><i class="fas fa-shield-alt"></i> 6 Months Warranty</li>
+                </ul>
+                <a href="contact us.html" class="btn btn-white" style="width: 100%; justify-content: center; margin-top: 20px;">Select Plan</a>
+            </div>
+            <div class="price-card popular" data-aos="fade-up">
+                <div class="popular-badge">BEST SELLER</div>
+                <div class="plan-name">Family Pro</div>
+                <div class="plan-price">₦250k <span>/ installed</span></div>
+                <p class="plan-desc">Perfect coverage for duplexes and family homes.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> 3 Solar-Powered Cameras</li>
+                    <li><i class="fas fa-check-circle"></i> Full Color Night Vision</li>
+                    <li><i class="fas fa-check-circle"></i> 2-Way Audio Intercom</li>
+                    <li><i class="fas fa-check-circle"></i> 1 Year Warranty</li>
+                </ul>
+                <a href="contact us.html" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 20px;">Select Plan</a>
+            </div>
+            <div class="price-card" data-aos="fade-up">
+                <div class="plan-name">Estate Elite</div>
+                <div class="plan-price">₦550k <span>/ installed</span></div>
+                <p class="plan-desc">Comprehensive protection for large properties.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-video"></i> 8 Ultra-HD Cameras</li>
+                    <li><i class="fas fa-fingerprint"></i> Smart Door Lock Included</li>
+                    <li><i class="fas fa-tv"></i> Dedicated Monitoring Screen</li>
+                    <li><i class="fas fa-hdd"></i> 3TB Storage Space</li>
+                </ul>
+                <a href="contact us.html" class="btn btn-white" style="width: 100%; justify-content: center; margin-top: 20px;">Select Plan</a>
+            </div>
+        `;
+
+        const businessPlans = `
+            <div class="price-card" data-aos="fade-up">
+                <div class="plan-name">Small Biz</div>
+                <div class="plan-price">₦180k <span>/ installed</span></div>
+                <p class="plan-desc">Basic shop surveillance with audio recording.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-video"></i> 2 HD Dome Cameras</li>
+                    <li><i class="fas fa-microphone"></i> Audio Recording</li>
+                    <li><i class="fas fa-mobile-alt"></i> Manager App Access</li>
+                    <li><i class="fas fa-shield-alt"></i> 1 Year Warranty</li>
+                </ul>
+                <a href="contact us.html" class="btn btn-white" style="width: 100%; justify-content: center; margin-top: 20px;">Select Plan</a>
+            </div>
+            <div class="price-card popular" data-aos="fade-up">
+                <div class="popular-badge">RECOMMENDED</div>
+                <div class="plan-name">Corporate Shield</div>
+                <div class="plan-price">₦750k <span>/ installed</span></div>
+                <p class="plan-desc">Full office complex coverage with biometrics.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> 12 IP Cameras (4K)</li>
+                    <li><i class="fas fa-check-circle"></i> Biometric Time Attendance</li>
+                    <li><i class="fas fa-check-circle"></i> Control Room Setup</li>
+                    <li><i class="fas fa-check-circle"></i> 2 Years Support</li>
+                </ul>
+                <a href="contact us.html" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 20px;">Select Plan</a>
+            </div>
+            <div class="price-card" data-aos="fade-up">
+                <div class="plan-name">Industrial</div>
+                <div class="plan-price">Custom <span>Quote</span></div>
+                <p class="plan-desc">For factories, warehouses, and large estates.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-video"></i> PTZ Zoom Cameras</li>
+                    <li><i class="fas fa-bolt"></i> Electric Fencing</li>
+                    <li><i class="fas fa-server"></i> Server-Grade Storage</li>
+                    <li><i class="fas fa-user-shield"></i> On-Site Training</li>
+                </ul>
+                <a href="contact us.html" class="btn btn-white" style="width: 100%; justify-content: center; margin-top: 20px;">Contact Us</a>
+            </div>
+        `;
+
+        function togglePricing() {
+            const container = document.getElementById('pricing-container');
+            const wrapper = document.querySelector('.toggle-wrapper');
+            const btnHome = document.getElementById('btn-home');
+            const btnBiz = document.getElementById('btn-business');
+
+            if (wrapper.classList.contains('business')) {
+                // Switch to Home
+                wrapper.classList.remove('business');
+                btnHome.classList.add('active');
+                btnBiz.classList.remove('active');
+                container.innerHTML = residentialPlans;
+            } else {
+                // Switch to Business
+                wrapper.classList.add('business');
+                btnHome.classList.remove('active');
+                btnBiz.classList.add('active');
+                container.innerHTML = businessPlans;
+            }
+        }
+
+        // FAQ Toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

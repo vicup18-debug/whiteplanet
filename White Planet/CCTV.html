@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Advanced CCTV video monitoring systems designed for real-time protection and visibility.">
+    <title>CCTV Surveillance Solutions | White Planet Global</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- GLOBAL VARIABLES (Refined Theme) --- */
+        :root {
+            --primary: #003B73;
+            /* Refined Blue requested */
+            --primary-light: #0056a3;
+            --accent: #00d2ff;
+            --white: #ffffff;
+            --bg-light: #f8fbff;
+            --text-main: #334155;
+            --text-dark: #0f172a;
+            --radius: 16px;
+            /* 10-16px requested */
+            --shadow-card: 0 10px 30px rgba(0, 59, 115, 0.06);
+            --shadow-hover: 0 20px 40px rgba(0, 59, 115, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+        }
+
+        a {
+            text-decoration: none;
+            transition: 0.3s;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            border-radius: var(--radius);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        /* --- NAVIGATION (Updated) --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        /* Dropdown for Services */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: var(--shadow-card);
+            border-radius: 10px;
+            width: 220px;
+            display: none;
+            padding: 10px 0;
+            flex-direction: column;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: flex;
+        }
+
+        .dropdown-menu a {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--bg-light);
+            color: var(--primary);
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 59, 115, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* --- HERO SECTION --- */
+        .service-hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.4;
+            filter: blur(40px);
+        }
+
+        .shape-1 {
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: #e0f2fe;
+        }
+
+        .shape-2 {
+            bottom: 50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: #e0e7ff;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .breadcrumb span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* --- OVERVIEW --- */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .overview-img-box {
+            position: relative;
+            padding: 20px;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+            border: 1px solid #eef2ff;
+        }
+
+        .overview-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.1;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /* --- FEATURE CARDS --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+            transition: 0.3s;
+            border-top: 4px solid transparent;
+            position: relative;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-top: 4px solid var(--primary);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .feat-icon {
+            width: 50px;
+            height: 50px;
+            background: #f0f7ff;
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* --- WHY US & PROCESS --- */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .why-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .why-item i {
+            color: #10b981;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .process-card {
+            position: relative;
+            z-index: 2;
+        }
+
+        .p-icon-box {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .process-card:hover .p-icon-box {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* --- FAQ --- */
+        .faq-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-head {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            transition: 0.3s;
+            color: #64748b;
+        }
+
+        .faq-item.active .faq-body {
+            padding-bottom: 20px;
+            max-height: 200px;
+        }
+
+        /* --- CTA FOOTER --- */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #00264d 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            /* Simplified for template */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="white_planet_upgraded.html" class="nav-logo">
+                    <img src="logo.png" alt="White Planet Global">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="white_planet_upgraded.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="active">Services <i class="fas fa-chevron-down"
+                                style="font-size: 12px;"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="cctv-surveillance.html">CCTV Surveillance</a>
+                            <a href="solar-security.html">Solar Systems</a>
+                            <a href="smart-locks.html">Smart Locks</a>
+                            <a href="electric-fencing.html">Electric Fencing</a>
+                        </div>
+                    </li>
+                    <li><a href="Pricing.html">Pricing</a></li>
+                    <li><a href="contact-us.html">Contact</a></li>
+                </ul>
+                <a href="contact-us.html" class="btn btn-primary">Get Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="service-hero">
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="container" data-aos="fade-up">
+            <div class="breadcrumb">
+                <a href="white_planet_upgraded.html">Home</a> <i class="fas fa-chevron-right"
+                    style="font-size: 0.7rem;"></i>
+                <a href="#">Services</a> <i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i>
+                <span>CCTV Surveillance</span>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">CCTV Surveillance Solutions</h1>
+                <p class="hero-subtitle">Advanced video monitoring systems designed for real-time protection and
+                    visibility.</p>
+                <div class="hero-actions">
+                    <a href="#overview" class="btn btn-primary">Get Started</a>
+                    <a href="contact-us.html" class="btn btn-outline">Request Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="overview" class="section-padding bg-white">
+        <div class="container overview-grid">
+            <div data-aos="fade-right">
+                <h4 style="color: var(--primary); margin-bottom: 10px; font-weight: 700;">SERVICE OVERVIEW</h4>
+                <h2 style="margin-bottom: 20px;">Crystal Clear Vision.</h2>
+                <p style="color: #64748b; margin-bottom: 30px;">
+                    We provide HD and 4K CCTV surveillance systems with professional installation, real-time monitoring
+                    support, motion detection, cloud backup, and mobile app viewing for homes, offices, and commercial
+                    spaces.
+                </p>
+                <a href="contact-us.html" style="color: var(--primary); font-weight: 600;">Book Site Survey <i
+                        class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="overview-img-box" data-aos="fade-left">
+                <img src="CCTV Installation.jpeg" alt="CCTV Service"
+                    style="width: 100%; height: 300px; object-fit: cover;">
+                <i class="fas fa-video overview-icon"></i>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: var(--bg-light);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="color: var(--primary);">Key Features</h2>
+                <p style="color: #64748b;">Technology that keeps you safe.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feat-icon"><i class="fas fa-eye"></i></div>
+                    <h3>HD & 4K Video Clarity</h3>
+                    <p>Crystal clear resolution to capture every detail.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feat-icon"><i class="fas fa-moon"></i></div>
+                    <h3>Night Vision</h3>
+                    <p>Advanced infrared and color night vision capabilities.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feat-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Remote Monitoring</h3>
+                    <p>View live footage from your mobile or PC anywhere.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feat-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Cloud Storage</h3>
+                    <p>Secure backup options to prevent data theft.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feat-icon"><i class="fas fa-camera"></i></div>
+                    <h3>Indoor/Outdoor</h3>
+                    <p>Weatherproof cameras rated for any environment.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feat-icon"><i class="fas fa-bell"></i></div>
+                    <h3>Smart Alerts</h3>
+                    <p>Instant notifications when motion is detected.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-white">
+        <div class="container">
+            <h2 style="color: var(--primary); margin-bottom: 40px;">Why Choose Us</h2>
+            <div class="why-grid">
+                <div class="why-item"><i class="fas fa-check-circle"></i> Certified installers</div>
+                <div class="why-item"><i class="fas fa-check-circle"></i> High-end surveillance equipment</div>
+                <div class="why-item"><i class="fas fa-check-circle"></i> Fast delivery</div>
+                <div class="why-item"><i class="fas fa-check-circle"></i> 24/7 support</div>
+                <div class="why-item"><i class="fas fa-check-circle"></i> Affordable maintenance plans</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: var(--bg-light);">
+        <div class="container">
+            <h2 style="color: var(--primary); text-align: center; margin-bottom: 50px;">Service Process</h2>
+            <div class="process-steps">
+                <div class="process-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="p-icon-box">1</div>
+                    <h4 style="font-size: 1rem;">Assessment</h4>
+                    <p style="font-size: 0.85rem; color: #64748b;">On-site assessment</p>
+                </div>
+                <div class="process-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-icon-box">2</div>
+                    <h4 style="font-size: 1rem;">Design</h4>
+                    <p style="font-size: 0.85rem; color: #64748b;">System design</p>
+                </div>
+                <div class="process-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-icon-box">3</div>
+                    <h4 style="font-size: 1rem;">Install</h4>
+                    <p style="font-size: 0.85rem; color: #64748b;">Camera installation</p>
+                </div>
+                <div class="process-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-icon-box">4</div>
+                    <h4 style="font-size: 1rem;">Setup</h4>
+                    <p style="font-size: 0.85rem; color: #64748b;">App setup & testing</p>
+                </div>
+                <div class="process-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="p-icon-box">5</div>
+                    <h4 style="font-size: 1rem;">Support</h4>
+                    <p style="font-size: 0.85rem; color: #64748b;">Final optimization & Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-white">
+        <div class="container">
+            <h2 style="margin-bottom: 30px; color: var(--primary);">Recent Projects</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <img src="CCTV.jpeg" alt="Project 1"
+                    style="height: 250px; object-fit: cover; width: 100%; box-shadow: var(--shadow-card);">
+                <img src="CCTV Installation.jpeg" alt="Project 2"
+                    style="height: 250px; object-fit: cover; width: 100%; box-shadow: var(--shadow-card);">
+                <img src="Solar Pannel.jpeg" alt="Project 3"
+                    style="height: 250px; object-fit: cover; width: 100%; box-shadow: var(--shadow-card);">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: var(--bg-light);">
+        <div class="container" style="max-width: 800px;">
+            <h2 style="text-align: center; margin-bottom: 40px; color: var(--primary);">Common Questions</h2>
+            <div class="faq-item">
+                <div class="faq-head">How many cameras do I need? <i class="fas fa-plus"></i></div>
+                <div class="faq-body">This depends on the size of your property. A standard 4-bedroom duplex typically
+                    requires 4 to 8 cameras for full perimeter coverage.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-head">Can I watch remotely? <i class="fas fa-plus"></i></div>
+                <div class="faq-body">Yes, all our systems come with a mobile app that allows you to view live footage
+                    from anywhere in the world.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-head">Do the cameras record at night? <i class="fas fa-plus"></i></div>
+                <div class="faq-body">Absolutely. We use cameras with infrared and full-color night vision technology to
+                    ensure clarity in total darkness.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 20px;">Ready to secure your space?</h2>
+            <div style="display: flex; justify-content: center; gap: 20px;">
+                <a href="contact-us.html" class="btn btn-outline" style="border-color: white; color: white;">Contact
+                    Us</a>
+                <a href="contact-us.html" class="btn btn-primary" style="background: white; color: var(--primary);">Book
+                    Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: #00264d; color: #cbd5e1; padding: 60px 0;">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2025 White Planet Global. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-head').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                const icon = item.querySelector('i');
+                icon.className = parent.classList.contains('active') ? 'fas fa-minus' : 'fas fa-plus';
+            });
+        });
+    </script>
+</body>
+
+</html>
